@@ -1,0 +1,187 @@
+body {
+    background: url(bg_image.jpg);
+    background-repeat: no-repeat;
+    background-position: 60% 20%;
+    background-size: auto;
+    color: #ffffff;
+    z-index: -2;
+
+}
+.layer {
+    background-color: #001820;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+nav {
+    text-align: right;
+    margin-top: 5vh;
+    z-index: 1;
+}
+button {
+    padding: 1vh 2vh 1vh 2vh;
+    display: inline;
+    position: relative;
+    font-size: 2vh;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    transition-property: left right;
+    transition: width .35s ease-in-out;
+}
+button.regular:after{
+    content: '';
+    position: absolute;
+    width: 0; height: 3px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}
+button.regular:hover:after {
+    background: #fff;
+    width: 100%;
+    left: 0;
+}
+
+.contact {
+    border: 2px solid #ffffff ;
+    border-radius: 7px;
+}
+.contact:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#menuToggle
+{
+    display: block;
+    position: absolute;
+    right: 1vh;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  right: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.burger {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    right: 20px;
+    margin-top: 20px;
+}
+#menu
+{
+    position: absolute;
+    width: 100%;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 25px;
+    background: #001820;
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+/*
+burger menu display
+*/
+#menuToggle #iks
+{
+  display: none;
+}
+#menuToggle input:checked ~ #burger
+{
+  display: none;
+}
+#menuToggle input:checked ~ #iks
+{
+  display: block;
+}
+
+.p1
+{
+    position: relative;
+    text-align: center;
+    margin-top: 20vh;
+    color: #000000;
+    font-family: 'Raleway', 'sans-serif';
+    font-size: 4vh;
+    font-weight: 200;
+}
+.p1 strong
+{
+    color: #ffffff;
+}
+
+/*
+Media queries - background
+*/
+@media (min-width: 1440px) {
+  #menuToggle {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px){
+  body {
+    background-position: 70% 15%;
+    background-size: 170%;
+  }
+  #menuToggle {
+    display: none;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 1024px){
+  body {
+    background-position: 60% 15%;
+    background-size: 190%;
+  }
+  nav button {
+    display: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  body {
+    background-position: 55% 30%;
+    background-size: 600%;
+  }
+  nav button {
+    display: none;
+  }
+}
